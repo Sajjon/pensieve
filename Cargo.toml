@@ -1,6 +1,12 @@
-[package]
-name = "pensieve"
-version = "0.1.0"
-edition = "2024"
+[workspace]
+resolver = "2"
+members = [
+    "crates/pensieve", # Pensieve lib
+]
 
-[dependencies]
+# Dependencies used by all/many crates
+[workspace.dependencies]
+# INTERNAL CRATES
+pensieve = { path = "crates/pensieve" } # BCH Error Correction Code lib
+
+# EXTENRAL CRATES (sort lexicographically)
